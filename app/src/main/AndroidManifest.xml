@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- =======================
+         STORAGE PERMISSIONS FIX
+         ======================= -->
+    <!-- Android 11+ / API 30+ full storage access -->
+<!--    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />-->
+
+    <!-- Legacy read/write (Android ≤ 10 only) -->
+<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission-->
+<!--        android:name="android.permission.WRITE_EXTERNAL_STORAGE"-->
+<!--        android:maxSdkVersion="29" />-->
+
+    <!-- Android 13+ media permissions -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+    <!-- Backward compatibility for Android 10 & below -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />
+
+    <!-- Other permissions -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".VR720Application"
+        android:allowBackup="true"
+        android:configChanges="orientation|screenSize|screenLayout"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup,android:label">
+
+        <!-- Required for older libraries -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false"/>
+
+        <!-- =======================
+             ACTIVITIES
+           ======================= -->
+
+        <activity
+            android:name=".activity.LunchActivity"
+            android:label="@string/app_name"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/LunchTheme"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.HtmlActivity"
+            android:label="@string/app_name"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false"/>
+
+        <!-- VIEW image/video from file managers -->
+        <activity
+            android:name=".activity.OpenFileActivity"
+            android:label="@string/title_activity_pano"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Translucent"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:host="*" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="video/*"/>
+                <data android:scheme="content" />
+                <data android:scheme="file" />
+                <data android:host="*" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false"/>
+
+        <activity
+            android:name=".activity.ImportFileActivity"
+            android:label="@string/title_activity_import"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Translucent"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="video/*"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="video/*"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.GalleryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_gallery"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false"/>
+
+        <activity
+            android:name=".activity.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false"/>
+
+        <activity
+            android:name=".activity.ChooseLanguageActivity"
+            android:label="@string/title_choose_language"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false"/>
+
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="false"/>
+
+        <activity
+            android:name=".activity.PanoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_pano"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTop"
+            android:exported="false"/>
+
+        <!-- FileProvider -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.imengyu.vr720.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

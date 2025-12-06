@@ -1,0 +1,1995 @@
+Found files with Chinese characters and the matching lines (file: line: text):
+
+----
+File: app/proguard-rules.pro
+23: # 代码混淆压缩比，在0~7之间，默认为5，一般不做修改
+26: # 混合时不使用大小写混合，混合后的类名为小写
+31: # 指定不去忽略非公共库的类成员
+34: # 不做预校验，preverify是proguard的四个步骤之一，Android不需要preverify，去掉这一步能够加快混淆速度。
+37: # 保留Annotation不混淆 这在JSON实体映射时非常重要，比如fastJson
+40: # 避免混淆泛型
+43: # 抛出异常时保留代码行号
+125: # JS 调用Java 方法
+
+----
+File: app/src/main/cpp/CMakeLists.txt
+13: #扫描所有c文件
+25: # 包含目录
+52: #设置引进目标属性
+
+----
+File: app/src/main/cpp/VR720Renderer.cpp
+17: * 应用层入口函数
+
+----
+File: app/src/main/cpp/stdafx.h
+16: // C 运行时头文件
+
+----
+File: app/src/main/cpp/core/CCAndroidAssetReader.cpp
+42: /*获取文件大小*/
+
+----
+File: app/src/main/cpp/core/CCAndroidAssetReader.h
+13: //安卓 Assets 读取器
+19: * 创建简易文件读取器
+20: * @param path 目标文件路径
+21: * @param assetManager 安卓AssetManager对象
+27: * 获取文件是否已经打开
+32: * 关闭文件
+37: * 获取文件长度
+38: * @return 文件长度
+42: * 移动fp指针至文件开始的偏移位置
+43: * @param i 指定位置
+48: * 移动fp指针
+49: * @param i 指定位置
+50: * @param seekType 位置的类型，SEEK_*
+56: * @param arr 缓冲区
+57: * @param offset 读取偏移
+58: * @param count 读取个数
+62: * 读取一个字节
+63: * @return 返回字节
+67: * 读取整个文件
+68: * @param size 返回缓冲区大小
+69: * @return 返回缓冲区
+
+----
+File: app/src/main/cpp/core/CCAssetsManager.cpp
+93: /*获取文件大小*/
+98: /*关闭文件*/
+
+----
+File: app/src/main/cpp/core/CCAssetsManager.h
+13: * 资源管理
+19: * 获取资源路径
+20: * @param typeName 类型文件夹
+21: * @param name 资源名称
+26: * 获取自定义文件夹路径
+27: * @param dirName 文件夹
+28: * @param name 资源名称
+34: * 加载资源到内存
+35: * @param path 资源完整路径
+36: * @param bufferLength 用来存放缓冲区大小
+37: * @return 返回数据缓冲区
+42: * 加载字符串资源到内存
+43: * @param path 资源完整路径
+44: * @param bufferLength 用来存放缓冲区大小
+45: * @return 返回数据缓冲区
+50: * 从文件加载贴图
+51: * @param path 贴图路径
+52: * @return 返回贴图，如果加载失败返回nullptr
+57: * 从文件加载网格
+58: * @param path 网格路径
+59: * @return 返回网格，如果加载失败返回nullptr
+64: * 资源管理从JNI初始化
+70: * 加载 Android assets 文件夹资源。返回缓冲区使用完成后需要 free
+71: * @param path 资源路径
+72: * @param buffer 用来存放缓冲区地址
+73: * @param bufferLength 用来存放缓冲区大小
+74: * @return 返回是否成功
+
+----
+File: app/src/main/cpp/core/CCFileManager.h
+9: //加载贴图回调
+29: //判断文件类型是不是图像
+31: //判断文件类型是不是视频
+35: * 文件打开管理
+45: * 打开文件
+46: * @param path 文件路径
+47: * @return 返回是否成功
+51: * 关闭文件
+55: * 获取当前打开文件的路径
+56: * @return 返回路径
+61: * 获取当前打开文件的类型
+62: * @return 返回文件的类型
+71: * 设置文件关闭回调
+72: * @param c 回调
+73: * @param data 回调自定义数据
+81: * 获取上一个错误
+82: * @return 上一个错误
+
+----
+File: app/src/main/cpp/core/CCFileReader.h
+6: //文件读取器
+11: * 创建简易文件读取器
+12: * @param path 目标文件路径
+19: * 获取文件是否已经打开
+24: * 关闭文件
+29: * 获取文件长度
+30: * @return 文件长度
+34: * 移动fp指针至文件开始的偏移位置
+35: * @param i 指定位置
+40: * 移动fp指针
+41: * @param i 指定位置
+42: * @param seekType 位置的类型，SEEK_*
+46: * 获取文件句柄 FILE*
+53: * @param arr 缓冲区
+54: * @param offset 读取偏移
+55: * @param count 读取个数
+59: * 读取一个字节
+60: * @return 返回字节
+64: * 读取整个文件
+65: * @param size 返回缓冲区大小
+66: * @return 返回缓冲区
+
+----
+File: app/src/main/cpp/core/CCMaterial.h
+8: //简单材质
+16: //漫反射贴图
+19: //贴图重复
+21: //贴图偏移
+25: * 使用当前材质
+
+----
+File: app/src/main/cpp/core/CCMesh.h
+7: //面信息
+18: //简单网格类
+26: * 生成网格缓冲区
+30: * 重新将数据传入缓冲区
+34: * 释放网格缓冲区
+38: * 渲染Mesh
+42: * 从obj文件加载
+43: * @param path obj文件路径
+47: * 清空已加载的数据和缓冲区
+54: //顶点数据
+56: //法线向量数据
+58: //索引数据
+60: //uv数据
+
+----
+File: app/src/main/cpp/core/CCMeshLoader.h
+6: //Mesh 类型
+13: //Mesh 加载器
+18: * 获取指定类型的Mesh加载器
+19: * @param type 类型，CCMeshType
+20: * @return 返回加载器
+24: * 通过文件路径获取指定类型的Mesh加载器
+25: * @param path 网格文件路径
+26: * @return 返回加载器
+30: * 全局初始化
+34: * 全局释放资源
+39: * 从文件加载Mesh
+40: * @param path 文件路径
+41: * @param mesh 要被加载的Mesh
+42: * @return 返回是否成功
+46: * 从内存数据加载Mesh
+47: * @param buffer mesh数据内存
+48: * @param bufferSize mesh数据大小
+49: * @param mesh 要被加载的Mesh
+50: * @return 返回是否成功
+54: * 获取上一次加载发生的错误
+55: * @return 加载错误
+61: * 设置加载错误
+62: * @param err 加载错误
+
+----
+File: app/src/main/cpp/core/CCModel.h
+8: //模型类
+15: //获取模型变换矩阵
+19: * 刷新向量
+23: * 重置模型位置和旋转
+27: * 绘制模型
+31: * 重新缓冲数据
+35: //模型是否可见
+38: //模型位置
+40: //缩放比例
+44: //模型材质
+46: //模型网格
+61: * 设置位置
+62: * @param position 摄像机位置
+
+----
+File: app/src/main/cpp/core/CCObjLoader.h
+6: //Obj 模型加载器
+12: * 从文件加载Mesh
+13: * @param path 文件路径
+14: * @param mesh 要被加载的Mesh
+15: * @return 返回是否成功
+19: * 从内存数据加载Mesh
+20: * @param buffer mesh数据内存
+21: * @param bufferSize mesh数据大小
+22: * @param mesh 要被加载的Mesh
+23: * @return 返回是否成功
+
+----
+File: app/src/main/cpp/core/CCPanoramaCamera.cpp
+3: // 处理从任何类似键盘的输入系统接收的输入，以摄像机定义的ENUM形式接受输入参数（从窗口系统中抽象出来）
+53: // 处理从鼠标输入系统接收的输入，预测x和y方向的偏移值
+67: // 确保当pitch超出范围时，屏幕不会翻转
+87: //计算摄像机在这个球上的坐标
+133: // 处理从鼠标滚轮事件接收的输入
+167: //设置模式
+
+----
+File: app/src/main/cpp/core/CCPanoramaCamera.h
+5: //摄像机全景模式
+12: //摄像机移动选项
+28: //全景摄像机
+32: //摄像机全景模式
+35: // 处理从任何类似键盘的输入系统接收的输入，以摄像机定义的ENUM形式接受输入参数（从窗口系统中抽象出来）
+37: // 处理从鼠标输入系统接收的输入，预测x和y方向的偏移值
+39: // 处理从鼠标滚轮事件接收的输入
+41: //缩放事件
+43: //设置模式
+45: //设置旋转回调
+47: //获取缩放百分比
+
+----
+File: app/src/main/cpp/core/CCPanoramaRenderer.cpp
+74: globalRenderInfo->glVendor = (GLubyte*)glGetString(GL_VENDOR);            //返回负责当前OpenGL实现厂商的名字
+75: globalRenderInfo->glRenderer = (GLubyte*)glGetString(GL_RENDERER);    //返回一个渲染器标识符，通常是个硬件平台
+76: globalRenderInfo->glVersion = (GLubyte*)glGetString(GL_VERSION);    //返回当前OpenGL实现的版本号
+77: globalRenderInfo->glslVersion = (GLubyte*)glGetString(GL_SHADING_LANGUAGE_VERSION);//返回着色预压编译器版本号
+120: //渲染
+130: //视频贴图更新
+138: //墨卡托投影
+146: //摄像机矩阵
+149: //VR双屏模式则需要使用不同的屏幕宽高
+154: //模型位置和矩阵映射
+158: //完整绘制
+162: //绘制外层缩略图
+165: //绘制区块式完整全景球
+256: //摄像机矩阵
+282: m->model->Render(); //渲染区块
+322: //全景模型创建与销毁
+377: //创建缓冲区
+386: //顶点
+399: //顶点索引
+431: //创建缓冲区
+483: //创建缓冲区
+542: //模型控制
+635: //更新
+660: if (!m->loadMarked && !renderPanoramaFullTest) {//加载贴图
+690: //数学计算
+698: //float dot = glm::dot(cam->Front, dir);     //判断物体是否在相机前面
+
+----
+File: app/src/main/cpp/core/CCPanoramaRenderer.h
+26: * 基础全景渲染器
+71: //渲染控制
+87: //贴图池
+95: //公共方法
+103: //数据控制
+110: //模型控制
+127: //渲染墨卡托投影
+132: //视频贴图控制
+143: //模型创建
+151: //资源初始化
+157: //渲染函数
+164: //辅助
+169: //获取球面上的点
+182: //视频贴图控制
+
+----
+File: app/src/main/cpp/core/CCShader.h
+6: //Shader 封装类
+
+----
+File: app/src/main/cpp/core/CCTexture.h
+4: //贴图类
+16: * 从文件加载贴图（支持bmp、png、jpg、ttf、gif）
+17: * @param path 贴图文件路径
+22: * 从内存自动加载贴图数据
+23: * @param buffer 数据
+24: * @param bufferSize 数据长度
+28: * 从内存加载贴图数据
+29: * @param data 数据
+30: * @param width 图像宽
+31: * @param height 图像高
+32: * @param type 自定义数据类型（GL_RGB/GL_RGBA/GL_BGR）
+38: * 销毁贴图
+42: * 使用当前贴图
+46: * 取消使用当前贴图
+50: //设置是否加载完成
+52: //设置是否缓存
+54: //获取是否有透明通道
+56: //获取贴图宽度
+58: //获取贴图高度
+60: //获取贴图ID
+62: //获取或设置贴图横轴重复类型
+64: //获取或设置贴图纵轴重复类型
+66: //贴图类型
+68: //立方贴图大小
+72: * 重新创建贴图并填充数据
+73: * @param reCreate 是否重新创建贴图数据
+78: * 创建OpenGL贴图
+83: * 获取备份缓冲区
+88: * 获取备份缓冲区大小
+93: * 生成备份缓冲区或者是生成备份缓冲区然后备份数据
+94: * @param data 数据，如果为空则只创建缓冲区不填充数据
+95: * @param width 宽度
+96: * @param height 高度
+97: * @param type GL类型
+
+----
+File: app/src/main/cpp/core/CCTextureLoadQueue.h
+6: //贴图加载返回信息
+15: //贴图队列元素信息
+24: //加载贴图回调
+27: //贴图加载队列
+35: * 推入要加载的贴图
+36: * @param texture 贴图实例
+37: * @param x x坐标
+38: * @param y y坐标
+39: * @param id 自定义ID
+45: * 设置贴图加载回调
+46: * @param handle 回调
+47: * @param data 自定义数据
+52: * 主线程处理
+56: * 渲染线程处理
+
+----
+File: app/src/main/cpp/core/CCamera.cpp
+11: // 返回使用欧拉角和LookAt矩阵计算的view矩阵
+99: // 获取深度缓冲区中x,y的数值
+
+----
+File: app/src/main/cpp/core/CCamera.h
+10: // 初始化摄像机变量
+19: * 摄像机投影模式
+23: * 透视投影
+27: * 正交投影
+33: * 摄像机FOV改变时的回调
+40: * 摄像机类，处理输入并计算相应的欧拉角，矢量和矩阵
+45: //摄像机投影
+47: // 摄像机FOV
+49: //正交投影摄像机视图垂直方向的大小
+51: //剪裁平面近端
+53: //剪裁平面远端
+55: //摄像机背景颜色
+58: //摄像机视图矩阵
+60: //摄像机透视矩阵
+64: * 初始化摄像机
+65: * @param position 位置
+66: * @param up 上向量
+67: * @param rotate 旋转
+72: * 返回使用欧拉角和LookAt矩阵计算的view矩阵
+78: * 设置摄像机透视投影FOV改变时的回调
+79: * @param callback 回调
+80: * @param data 自定义回调参数
+84: * 设置摄像机正交投影大小改变时的回调
+85: * @param callback 回调
+86: * @param data 自定义回调参数
+91: * 设置摄像机fov
+96: * 设置摄像机正交投影大小
+97: * @param o 正交投影大小(以屏幕宽度为基准)
+102: * 强制刷新摄像机
+106: * 重置摄像机旋转和位置
+111: * 设置摄像机所属 VIEW
+117: * @brief  					窗口坐标转化为世界坐标
+118: * @brief screenPoint		窗口坐标点
+119: * @brief viewportRange 	视口范围。 各个值依次为：左上-右下
+120: * @brief modelViewMatrix 	模型视图矩阵
+121: * @brief projectMatrix 	投影矩阵
+122: * @brief pPointDepth   	屏幕点的深度，如果不指定(为nullptr),从深度缓冲区中读取深度值
+123: * @return 					世界坐标系
+124: * @note 注意：得到的世界坐标系在使用前要除以齐次坐标值w，
+125: *		 如果w是0，则不应使用此点。
+143: * @brief 世界坐标系转换为屏幕坐标系
+144: * @brief worldPoint		世界坐标的点坐标点
+145: * @brief viewportRange 	视口范围。 各个值依次为：左上-右下
+146: * @brief modelViewMatrix 	模型视图矩阵
+147: * @brief projectMatrix 	投影矩阵
+148: * @brief pPointDepth   	屏幕点的深度，如果不指定(为nullptr),从深度缓冲区中读取深度值
+149: * @return 					窗口坐标点
+150: * @note 返回的窗口坐标带深度值，如果仅适用2D窗口像素坐标点，仅适用它的x,y维即可
+155: * 设置摄像机面向
+156: * @param faceIndex 0-6，一共六个面
+
+----
+File: app/src/main/cpp/core/CColor.h
+6: //颜色类
+
+----
+File: app/src/main/cpp/core/CMobileGameRenderer.cpp
+28: //文件管理
+72: //如果开启了缓存，那么同时加载缓存
+79: //加载主图
+85: //测试加载缩略图
+88: //检查是否需要分片并加载
+96: //加载主图
+102: //测试加载缩略图
+109: //打开视频
+164: //计算分块大小
+176: //设置渲染分块参数
+207: //测试(不再使用)
+390: //输入处理
+411: //旋转球体
+418: //移动模型
+490: //绘制
+498: //强制停止加载
+508: //关闭
+523: //渲染
+529: //渲染测试
+532: //墨卡托圆柱投影模式
+535: //VR双屏模式的渲染
+538: //墨卡托圆柱投影模式
+559: //普通渲染
+564: //在渲染线程中加载贴图
+587: //平滑移动处理
+618: //加载队列处理
+624: //加检测按键
+644: if(w > h) { //横屏
+655: } else { //竖屏
+668: //逻辑控制
+684: //加载上次保存的图像缓存
+716: //原始加载
+741: //保存缓存至文件
+754: //加载完成
+885: //公共方法
+996: //清空移动惯性
+1025: //播放器公共方法
+1037: //属性参数扩展方法
+1112: //属性参数私有方法
+
+----
+File: app/src/main/cpp/core/CMobileGameRenderer.h
+16: //全景模式
+33: * 全景游戏基础渲染器
+53: //属性方法
+62: //视频播放器方法
+73: //鼠标移动速度与粘性计算
+106: //全景模式
+
+----
+File: app/src/main/cpp/core/CMobileOpenGLView.cpp
+75: //绘制
+78: //清空
+96: //绘制
+99: //绘制界面
+
+----
+File: app/src/main/cpp/core/COpenGLRenderer.h
+7: * 渲染器抽象类
+12: //宽度和高度
+23: * 重新初始化
+24: * @return 返回初始化是否成功
+28: * 初始化
+29: * @return 返回初始化是否成功
+33: * 渲染时调用
+34: * @param FrameTime 增量时间
+38: * 渲染UI时调用
+42: * 每一帧更新时调用
+46: * 当视图重新调整大小时会调用此方法
+47: * @param Width 新宽度
+48: * @param Height 新高度
+52: * 释放
+56: * 延迟释放
+61: * 所属 View
+
+----
+File: app/src/main/cpp/core/COpenGLView.cpp
+12: //摄像机
+32: //摄像机矩阵变换
+35: //摄像机投影
+61: //用户事件处理
+75: //按键事件处理
+
+----
+File: app/src/main/cpp/core/COpenGLView.h
+20: //OpenGL 视图抽象类
+29: //视图高度
+31: //视图宽度
+35: * 初始化
+36: * @return 返回是否成功
+40: * 暂停
+44: * 继续
+49: * 释放
+53: * 手动更新视图大小
+54: * @param w 宽度
+55: * @param h 高度
+59: * 设置鼠标事件回调
+63: * 设置用户缩放手势事件回调
+68: //摄像机
+72: * 计算当前主摄像机的矩阵映射
+73: * @param shader 使用的程序
+77: * 计算无摄像机时的矩阵映射
+78: * @param shader 使用的程序
+82: * 计算当前主摄像机的矩阵映射
+83: * @param shader 使用的程序
+87: * 计算当前主摄像机的矩阵映射（自定义大小）
+88: * @param shader 使用的程序
+89: * @param w 屏幕宽度
+90: * @param h 屏幕高度
+94: //当前主摄像机
+98: * 设置当前主摄像机
+99: * @param camera 摄像机
+103: //时间
+107: * 获取当前程序绘制总时间
+112: * 获取当前FPS
+117: * 获取绘制时间
+122: * 获取增量时间
+127: //按键
+131: * 获取是否有键按下
+132: * @param code 按键键值
+137: * 获取是否有键正在按下
+138: * @param code 按键键值
+143: * 获取是否有键放开
+144: * @param code 按键键值
+150: * 获取当前渲染器
+
+----
+File: app/src/main/cpp/core/GlUtils.cpp
+5: * @brief 一维线性映射函数，将[a,b]中的点x，映射到[a1,b1]中的点x1
+13: // 原始范围时0,
+14: //LOG_WARN("原始范围不能为0(%f,%f)", a, b);
+
+----
+File: app/src/main/cpp/imageloaders/CBMPLoader.cpp
+109: SetLastError("不支持灰度色或256色位图格式");
+113: SetLastError("不支持该位图格式");
+
+----
+File: app/src/main/cpp/imageloaders/CBMPLoader.h
+4: //BMP结构
+
+----
+File: app/src/main/cpp/imageloaders/CPngLoader.cpp
+82: SetLastError("不支持此图像位深度");
+92: SetLastError("不支持此图像颜色类型");
+
+----
+File: app/src/main/cpp/player/CCAudioDevice.cpp
+53: //释放混音器
+59: //释放引擎
+68: // 创建引擎 SLObjectItf engineObject
+76: // 初始化引擎(init)
+83: // 获取引擎接口SLEngineItf engineInterface
+95: // 初始化混音器outputMixObject
+102: //3.2 配置音轨（输出）
+103: //设置混音器
+106: //需要的接口， 操作队列的接口，可以添加混音接口
+110: //创建buffer缓冲类型的队列 2个队列
+112: //pcm数据格式
+113: //pcm +2（双声道）+ 44100（采样率）+ 16（采样位）+ LEFT|RIGHT（双声道）+ 小端数据
+123: //数据源 将上述配置信息放到这个数据源中
+125: //创建播放器
+127: //初始化播放器
+131: //设置回调
+
+----
+File: app/src/main/cpp/player/CCAudioDevice.h
+34: * 采样格式：16位
+40: * 目标采样率
+59: //引擎
+61: //引擎接口
+63: //混音器
+65: //播放器
+67: //播放器接口
+69: //队列结构
+
+----
+File: app/src/main/cpp/player/CCDecodeQueue.cpp
+41: //包数据队列
+78: //已经解码的数据队列
+113: //清空队列数据
+126: //视频太慢丢包
+151: //两个池
+152: //可以随用随取，防止重复申请释放内存的额外开销
+
+----
+File: app/src/main/cpp/player/CCDecodeQueue.h
+15: * 解码队列控制类
+
+----
+File: app/src/main/cpp/player/CCPlayerDefine.h
+21: //结构体声明
+25: * 播放器初始化数据
+32: * 播放器渲染器
+37: * 同步队列最大大小
+41: * 同步队列增长步长
+45: * 同步队列增长步长
+50: * 目标格式
+54: * 目标宽度
+58: * 目标高度
+68: * 限制FPS
+74: * 播放器额外数据
+90: //解码器状态值
+93: //用户可见的播放器状态值
+129: //音频输出配置
+137: //播放器事件
+144: //软件音量
+
+----
+File: app/src/main/cpp/player/CCPlayerRender.cpp
+16: //初始化SwsContext
+18: data->VideoCodecContext->width,   //原图片的宽
+19: data->VideoCodecContext->height,  //源图高
+20: data->VideoCodecContext->pix_fmt, //源图片format
+21: data->InitParams->DestWidth,  //目标图的宽
+22: data->InitParams->DestHeight,  //目标图的高
+33: //初始化 swrContext
+40: // 配置输入/输出通道类型
+42: // 这里 AUDIO_DEST_CHANNEL_LAYOUT = AV_CH_LAYOUT_STEREO，即 立体声
+44: // 配置输入/输出采样率
+47: // 配置输入/输出数据格式
+53: // 重采样后一个通道采样数
+58: // 重采样后一帧数据的大小
+170: //时钟
+180: //延迟计算
+184: //与音频同步
+187: //音频与视频的时间差
+207: //正常播放
+215: //更具指定的数据初始化/填充缓冲区
+218: //转码
+263: //时钟
+273: // 转换，返回每个通道的样本数
+311: //时钟
+322: // 转换，返回每个通道的样本数
+329: //pts时间+当前帧播放需要的时间
+
+----
+File: app/src/main/cpp/player/CCPlayerRender.h
+57: int64_t curVideoDts = 0;	//记录当前播放的视频流Packet的DTS
+58: int64_t curVideoPts = 0;	//记录当前播放的视频流Packet的DTS
+59: int64_t curAudioDts = 0;	//记录当前播放的音频流Packet的DTS
+60: int64_t curAudioPts = 0;	//记录当前播放的音频流Packet的DTS
+62: // 输出缓冲
+64: // 重采样后，每个通道包含的采样数
+65: // acc默认为1024，重采样后可能会变化
+67: // 重采样以后，一帧数据的大小
+70: //时钟
+76: //状态控制
+
+----
+File: app/src/main/cpp/player/CCVideoPlayer.cpp
+18: //播放器子线程方法
+48: //停止
+51: //释放
+63: //先停止序列
+67: //跳转到指定帧
+81: avcodec_flush_buffers(videoCodecContext);//清空缓存数据
+92: avcodec_flush_buffers(audioCodecContext);//清空缓存数据
+96: //清空队列中所有残留数据
+99: //启动线程
+115: //播放器公共方法
+244: //解码器初始化与反初始化
+253: //打开视频数据源。由于Android 对SDK存储权限的原因，如果没有为当前项目赋予SDK存储权限，打开本地视频文件时会失败
+263: //为分配的AVFormatContext 结构体中填充数据
+277: //找到"视频流".AVFormatContext 结构体中的nb_streams字段存储的就是当前视频文件中所包含的总数据流数量——
+278: //视频流，音频流
+311: //初始化视频解码器
+332: //通过解码器分配(并用  默认值   初始化)一个解码器context
+340: //更具指定的编码器值填充编码器上下文
+348: //通过所给的编解码器初始化编解码器上下文
+355: //初始化音频解码器
+366: //通过解码器分配(并用  默认值   初始化)一个解码器context
+373: //更具指定的编码器值填充编码器上下文
+380: //通过所给的编解码器初始化编解码器上下文
+410: //停止线程
+413: //释放资源
+424: //解码器线程控制
+450: //线程入口包装函数
+477: //线程主函数
+480: //背景线程，用于防止用户主线程卡顿
+504: decodeQueue.ClearAll();//清空数据
+526: //读取线程，解复用线程
+544: //等于0成功，其它失败
+547: decodeQueue.AudioEnqueue(avPacket);//添加音频包至队列中
+549: decodeQueue.VideoEnqueue(avPacket);//添加视频包至队列中
+552: //读取完成，但是可能还没有播放完成
+572: //视频解码线程
+583: //如果主线程标记已经结束，那么没有收到包即意味着结束，退出线程
+595: //延时
+605: //把包丢给解码器
+626: //入队列
+643: //音频解码线程
+652: //延时
+655: //如果主线程标记已经结束，那么没有收到包即意味着结束，退出线程
+677: //把包丢给解码器
+697: //入队列
+
+----
+File: app/src/main/cpp/player/CCVideoPlayer.h
+14: //播放器事件回调
+18: * 简单视频播放器
+29: //初始配置和状态信息
+34: //播放器公共方法
+51: //回调
+70: //解码器相关
+73: AVFormatContext * formatContext = nullptr;// 解码信息上下文
+74: AVCodec * audioCodec = nullptr;// 音频解码器
+75: AVCodec * videoCodec = nullptr;// 视频解码器
+76: AVCodecContext * audioCodecContext = nullptr;//解码器上下文
+77: AVCodecContext * videoCodecContext = nullptr;//解码器上下文
+79: long duration = 0;// 总时长
+81: CCDecodeState decodeState = CCDecodeState::NotInit;// 解码状态
+87: int videoIndex = -1;// 数据流索引
+88: int audioIndex = -1;// 数据流索引
+100: //线程控制
+124: //流水线启停
+132: //播放器工作子线程控制
+
+----
+File: app/src/main/cpp/utils/CStringHlp.cpp
+126: /*这里的第三个长度参数，应为字节长度，即宽字符长度 * 4 */
+
+----
+File: app/src/main/cpp/utils/CStringHlp.h
+10: //字符串帮助类
+16: * 获取大小的可读字符串
+17: * @param byteSize 大小
+30: * 宽字符 Unicode 转 Char
+31: * @param szStr 源字符串
+36: * 宽字符 Unicode 转 UTF8
+37: * @param unicode 源字符串
+42: * Char 转宽字符 Unicode
+43: * @param szStr 源字符串
+48: * UTF8 字符串转 Unicode宽字符
+49: * @param szU8 源字符串
+
+----
+File: app/src/main/cpp/utils/FileUtils.cpp
+65: //保存压缩后的图片
+72: cinfo.in_color_space = compoents == 4 ? JCS_EXT_RGBA : JCS_EXT_RGB; //JCS_GRAYSCALE表示灰度图，JCS_RGB表示彩色图像
+74: jpeg_set_quality(&cinfo, 90, TRUE);	//设置压缩质量
+77: JSAMPROW row_pointer[1];	// 一行位图
+
+----
+File: app/src/main/cpp/utils/Logger.h
+10: //日志级别
+12: //文字
+14: //信息
+16: //警告
+18: //错误
+20: //禁用
+23: //日志输出位置
+25: //输出到系统默认控制台
+27: //输出到文件
+29: //输出到自定义回调
+35: //快速记录日志
+52: //日志记录
+
+----
+File: app/src/main/java/com/imengyu/vr720/VR720Application.java
+16: * 应用全局初始化操作
+22: //全局服务使用
+51: //全局初始化方法
+64: //设置错误回调
+67: //初始化数据服务
+75: //初始化内核
+
+----
+File: app/src/main/java/com/imengyu/vr720/activity/GalleryActivity.java
+96: //菜单
+183: //初始化视图
+276: //列表事件
+321: //标记
+352: //添加到对应相册
+420: //其他事件
+423: //标题栏选择数据更改
+446: //标题栏更多按钮点击
+534: //回调
+540: //获取选择器返回的数据
+
+----
+File: app/src/main/java/com/imengyu/vr720/activity/ImportFileActivity.java
+61: //app 没有完全启动，现在返回 LunchActivity 进行初始化
+64: //app 启动了，跳转到MainActivity
+70: //尝试获取真实路径
+
+----
+File: app/src/main/java/com/imengyu/vr720/activity/LunchActivity.java
+36: //设置语言
+41: //获取参数
+46: //设置view
+49: //检查native
+53: //检查是否同意许可以及请求权限
+68: // 跳转到主界面
+94: //耗时任务，比如加载网络数据
+105: //转回UI线程
+133: //权限申请
+144: // 权限是否已经 授权 GRANTED---授权  DINIED---拒绝
+146: // 如果没有授予该权限，就去提示用户请求
+154: // 提示用户该请求权限的弹出框
+175: // 开始提交请求权限
+177: // 提示用户去应用设置界面手动开启权限
+180: // 跳转到应用设置界面
+190: // 跳转到应用设置界面
+201: // 跳转到当前应用的设置界面
+218: // 判断用户是否 点击了不再提醒。(检测该权限是否还可以申请)
+221: // 用户还是想用我的 APP 的
+222: // 提示用户去应用设置界面手动开启权限
+
+----
+File: app/src/main/java/com/imengyu/vr720/activity/MainActivity.java
+95: //打开文件传来的参数
+122: //控件
+155: // 得到contentView 实现侧滑界面出现后主界面向右平移避免侧滑界面遮住主界面
+180: //标题栏按钮
+188: //两个Fragment
+192: //两个Fragment的选择模式标题栏回调
+222: //添加
+226: //初始
+229: //适配器
+240: //退出选择模式
+261: //标题栏事件
+279: //添加按钮到标题栏
+291: //返回键
+294: // 用来计算返回键的点击间隔时间
+301: //关闭 DrawerLayout
+307: //自定义处理
+331: //菜单
+367: //主线程handler
+395: //Activity 返回值
+419: //联网检测并进行一些操作
+425: //是否是第一次使用APP
+442: //更新检查
+452: //设置上次更新时间
+486: //错误日志
+
+----
+File: app/src/main/java/com/imengyu/vr720/activity/OpenFileActivity.java
+38: //app 没有完全启动，现在返回 LunchActivity 进行初始化
+41: //app 启动了，跳转到MainActivity
+59: //读取参数
+61: //读取输入路径
+82: //尝试获取真实路径
+89: //如果获取失败，则保存至缓存再打开查看
+
+----
+File: app/src/main/java/com/imengyu/vr720/activity/PanoActivity.java
+102: private final int MAX_LONG_PRESS_TIME = 250;// 长按/双击最长等待时间
+112: //设置全屏
+126: //初始化内核
+136: //检查
+147: //加载图片
+150: //耳机广播接收器
+165: //读取参数
+238: //判断陀螺仪是否可用，否则禁用界面
+269: //视图点击事件
+289: //处理双击
+405: //设置上次模式
+413: //如果是横屏
+415: //底栏顶高度都可以为0
+423: //横向就把边距移到左右
+425: //刘海屏高度
+429: if(screenExifOrientation == ExifInterface.ORIENTATION_NORMAL) //左
+431: else if(screenExifOrientation == ExifInterface.ORIENTATION_ROTATE_180) //右
+438: //状态栏以及适配刘海屏
+445: //适配刘海屏
+449: //刘海屏高度
+462: //适配刘海屏
+466: //刘海屏高度
+476: //底栏高度
+525: //FPS计算
+537: //视频控件状态更新
+548: //界面控制
+630: //保存图像到SCREENSHOT文件夹
+632: //显示
+675: //界面相关刷新函数
+679: *  标题栏开启关闭
+835: * 主线程handler
+862: //重载相关响应函数
+877: //写入视频初始信息到UI上
+892: //清空状态
+899: //关闭后删除缓存文件
+909: //如果是退出则销毁
+983: //暂停视频
+1019: //耳机插入弹出
+1038: //屏幕旋转的处理
+1115: //主图片处理逻辑
+1127: //加载图像基础信息
+1146: //加载EXIF数据
+1177: //尝试首先加载最小的缩略图
+1181: //完成通知
+1212: String width = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH);//宽
+1213: String height = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT);//高
+1231: //尝试首先加载最小的缩略图
+1252: //如果已经打开文件，那么先关闭
+1263: //刷新前后按钮状态
+1267: //关闭工具栏
+1284: //这是图片
+1285: //加载图片基础信息
+1292: //加载
+1295: //不是正常的全景图，询问用户是否加载
+1312: //继续加载
+1325: //这是视频
+1332: //加载
+1335: //不是正常的全景图，询问用户是否加载
+1352: //继续加载
+1397: //陀螺仪控制
+
+----
+File: app/src/main/java/com/imengyu/vr720/adapter/GalleryListAdapter.java
+29: * 主列表适配器
+54: //在背景线程进行缩略图加载
+
+----
+File: app/src/main/java/com/imengyu/vr720/adapter/MainListAdapter.java
+30: * 主列表适配器
+
+----
+File: app/src/main/java/com/imengyu/vr720/core/natives/NativeVR720GLSurfaceView.java
+49: * 设置是否使用低FPS
+50: * @param useLowFps 是否使用低FPS
+57: * 设置FPS
+58: * @param fps 帧率
+65: * 设置本地渲染器
+66: * @param nativeRenderer 本地渲染器
+80: * 设置是否开启惯性拖动
+81: * @param dragVelocityEnabled 是否开启
+88: * 获取当前帧率
+89: * @return 当前帧率
+94: * 启动定时渲染
+98: * 停止定时渲染
+103: * 开始截图
+110: * 设置截图完成回调
+111: * @param callback 回调
+117: * 设置渲染回调
+118: * @param rendererCallback 回调
+132: * 截图
+165: //变量
+225: //更新陀螺仪数据
+232: //绘制
+235: //刷新FPS
+239: //渲染回调
+243: //截屏控制
+252: //事件处理
+283: //输入事件处理
+301: //获取速度
+307: int pCount = event.getPointerCount();// 触摸设备时手指的数量
+308: int action = event.getAction();// 获取触屏动作。比如：按下、移动和抬起等手势动作 // 手势按下且屏幕上是两个手指数量时
+309: if ((action & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_POINTER_DOWN && pCount == 2) { // 获取按下时候两个坐标的x轴的水平距离，取绝对值
+310: int xLen = Math.abs((int) event.getX(0) - (int) event.getX(1)); // 获取按下时候两个坐标的y轴的水平距离，取绝对值
+311: int yLen = Math.abs((int) event.getY(0) - (int) event.getY(1)); // 根据x轴和y轴的水平距离，求平方和后再开方获取两个点之间的直线距离。此时就获取到了两个手指刚按下时的直线距离
+349: int xLen = Math.abs((int) event.getX(0) - (int) event.getX(1)); // 获取抬起时候两个坐标的y轴的水平距离，取绝对值
+350: int yLen = Math.abs((int) event.getY(0) - (int) event.getY(1)); // 根据x轴和y轴的水平距离，求平方和后再开方获取两个点之间的直线距离。此时就获取到了两个手指抬起时的直线距离
+351: double nLenEnd = Math.sqrt((double) xLen * xLen + (double) yLen * yLen); // 根据手势按下时两个手指触点之间的直线距离A和手势抬起时两个手指触点之间的直线距离B。比较A和B的大小，得出用户是手势放大还是手势缩小
+
+----
+File: app/src/main/java/com/imengyu/vr720/core/natives/NativeVR720Renderer.java
+14: * 本地渲染器
+19: * 创建本地渲染器
+49: * 设置陀螺仪数据请求回调
+50: * @param onRequestGyroValueCallback 回调
+60: //消息回传
+69: //全景模式
+79: //视频状态
+91: //属性
+111: //C++代码声明
+195: * 获取播放器音量
+196: * @return 播放器音量（0-100）
+202: * 设置播放器音量
+203: * @param vol 播放器音量（0-100）
+209: * 获取内核当前是否打开文件
+210: * @return 前是否打开文件
+214: * 打开全景图片文件
+215: * @param path 文件路径
+219: * 获取打开文件的错误信息
+220: * @return 错误信息
+227: * 关闭当前文件
+232: * 设置是否启用缓存
+233: * @param enableCache 是否启用缓存
+238: * 设置缓存目录
+239: * @param path 缓存目录路径
+244: * 进行移动视图
+245: * @param x x坐标
+246: * @param y y坐标
+250: * 进行移动视图
+251: * @param y x坐标
+252: * @param x y坐标
+256: * 进行移动视图
+257: * @param x x偏移参数
+258: * @param y y偏移参数
+263: * 进行更新拖动速度
+264: * @param x x轴速度
+265: * @param y y轴速度
+270: * 进行缩放视图
+271: * @param v +-参数
+276: * 处理按键事件
+277: * @param key 按键
+278: * @param down 是否是按下
+283: * 获取当前全景模式
+284: * @return 全景模式（PANO_MODE_*）
+289: * 设置全景模式
+290: * @param mode 全景模式（PANO_MODE_*）
+297: * 设置是否启用陀螺仪
+298: * @param enable 是否启用
+302: * 获取是否启用陀螺仪
+303: * @return 是否启用
+308: * 强制更新陀螺仪参数
+317: * 设置是否启用VR双屏模式
+318: * @param enable 是否启用
+323: * 设置是否启用完整细节加载模式
+324: * @param enable 是否启用
+329: * 获取视频播放器状态
+330: * @return 视频播放器状态
+335: * 设置视频播放器状态
+336: * @param newState 新的视频播放器状态
+341: * 获取当前打开的文件是不是视频
+342: * @return 是不是视频
+347: * 获取当前视频时长
+348: * @return 视频时长（毫秒）
+355: * 获取当前视频播放位置
+356: * @return 当前视频播放位置（毫秒）
+363: * 设置当前视频播放位置
+364: * @param pos 视频播放位置（毫秒）
+369: * 恢复事件
+374: * 暂停事件
+
+----
+File: app/src/main/java/com/imengyu/vr720/core/panorama/PanoramaViewBinder.java
+87: //加载图标
+
+----
+File: app/src/main/java/com/imengyu/vr720/core/utils/FPSController.java
+22: //帧率计算
+30: * 更新任务
+40: * 计算当前帧率
+50: * 获取当前帧率
+51: * @return 当前帧率
+67: * 启动定时渲染
+78: * 停止定时渲染
+
+----
+File: app/src/main/java/com/imengyu/vr720/core/utils/GameUpdateThread.java
+19: * 更新任务
+
+----
+File: app/src/main/java/com/imengyu/vr720/dialog/CommonDialog.java
+18: * 通用对话框封装
+24: * 点击了积极按钮
+28: * 点击了消极按钮
+32: * 点击了中立按钮
+36: * 点击了 CheckBox
+58: * 创建通用对话框
+59: * @param activity 活动
+247: * 显示对话框
+256: * 显示对话框(允许状态丢失)
+279: * 关闭对话框
+285: * 隐藏对话框
+
+----
+File: app/src/main/java/com/imengyu/vr720/dialog/CommonDialogInternal.java
+145: //按钮的文字
+
+----
+File: app/src/main/java/com/imengyu/vr720/dialog/fragment/AgreementDialogFragment.java
+62: //构建协议可点字符串
+72: //事件
+
+----
+File: app/src/main/java/com/imengyu/vr720/dialog/fragment/ChooseGalleryDialogFragment.java
+74: //添加条目
+79: if(item.id == ListDataService.GALLERY_LIST_ID_VIDEOS) continue;//跳过视频收藏夹
+86: //按钮事件
+91: //新建相册
+103: //添加相册
+111: //发送信息到相册界面完成添加 galleryList.addItem(listItem, true);
+
+----
+File: app/src/main/java/com/imengyu/vr720/dialog/fragment/ChooseItemDialogFragment.java
+92: //添加条目
+103: //按钮事件
+
+----
+File: app/src/main/java/com/imengyu/vr720/dialog/fragment/ChooseSystemGalleryDialogFragment.java
+67: //按钮事件
+
+----
+File: app/src/main/java/com/imengyu/vr720/fragment/GalleryFragment.java
+148: //菜单
+167: //列表事件
+209: //公共方法
+294: //按钮事件
+
+----
+File: app/src/main/java/com/imengyu/vr720/fragment/HomeFragment.java
+214: //搜索类型选择
+280: // 当按了搜索之后关闭软键盘
+283: //进行搜索
+357: //菜单
+384: //公共方法
+398: //获取选择器返回的数据
+416: //打开文件之后添加到列表
+427: //打开文件之后询问是否添加到列表
+568: //列表操作
+593: //评价对话框
+608: //设置保存与读取
+638: //按钮事件
+663: //新建相册
+667: //导入图片至相册
+681: //相册界面更新
+777: //添加到对应相册
+785: //发送消息到相册界面进行相册缩略图刷新
+790: //关闭选择模式
+798: //其他事件
+
+----
+File: app/src/main/java/com/imengyu/vr720/fragment/settings/SettingsFragment.java
+185: //数据
+190: //设置
+
+----
+File: app/src/main/java/com/imengyu/vr720/list/GalleryList.java
+58: //条目操作
+110: //在背景线程进行缩略图加载
+125: //条目排序
+
+----
+File: app/src/main/java/com/imengyu/vr720/list/MainList.java
+41: * 主列表控制
+103: * 获取资源
+114: * 设置列表是否以宫格模式显示
+115: * @param isGrid 是否以宫格模式显示
+158: * 进行搜索
+159: * @param s 关键字
+167: //生成搜索正则
+223: * 清空搜索
+232: //主列表控制
+241: //分组管理
+258: //清空索引数
+265: //分组
+269: //添加组
+272: //添加
+292: //清空不存在子条目的组
+300: //清除条目
+304: //根据日期排序
+310: //插入条目
+381: * 缩略图加载
+384: //在背景线程进行缩略图加载
+412: //条目操作
+416: * 条目是否已存在
+417: * @param filePath 文件路径
+418: * @return 返回是否已存在
+432: * 查找指定文件路径的条目
+433: * @param filePath 文件路径
+434: * @return 返回条目，如果不存在，则返回null
+444: * 条目添加
+445: * @param imageItem 条目
+474: * 清空
+485: * 删除一个项目
+486: * @param item 项目
+501: * 删除某些项目
+532: * 通知刷新
+543: //条目排序
+
+----
+File: app/src/main/java/com/imengyu/vr720/model/holder/GalleryListViewHolder.java
+9: * 列表条目绑定
+
+----
+File: app/src/main/java/com/imengyu/vr720/model/holder/MainListViewHolder.java
+14: * 列表条目绑定
+
+----
+File: app/src/main/java/com/imengyu/vr720/model/list/MainListItem.java
+10: * 主列表数据
+
+----
+File: app/src/main/java/com/imengyu/vr720/plugin/GlideEngine.java
+14: * Glide4.x的加载图片引擎实现,单例模式
+15: * Glide4.x的缓存机制更加智能，已经达到无需配置的境界。如果使用Glide3.x，需要考虑缓存机制。
+20: //单例
+22: //单例模式，私有构造方法
+25: //获取单例
+38: * 加载图片到ImageView
+40: * @param context   上下文
+41: * @param uri 图片路径Uri
+42: * @param imageView 加载到的ImageView
+44: //安卓10推荐uri，并且path的方式不再可用
+51: * 加载gif动图图片到ImageView，gif动图不动
+53: * @param context   上下文
+54: * @param gifUri   gif动图路径Uri
+55: * @param imageView 加载到的ImageView
+57: *                  备注：不支持动图显示的情况下可以不写
+59: //安卓10推荐uri，并且path的方式不再可用
+66: * 加载gif动图到ImageView，gif动图动
+68: * @param context   上下文
+69: * @param gifUri   gif动图路径Uri
+70: * @param imageView 加载动图的ImageView
+72: *                  备注：不支持动图显示的情况下可以不写
+74: //安卓10推荐uri，并且path的方式不再可用
+82: * 获取图片加载框架中的缓存Bitmap
+84: * @param context 上下文
+85: * @param uri    图片路径
+86: * @param width   图片宽度
+87: * @param height  图片高度
+89: * @throws Exception 异常直接抛出，EasyPhotos内部处理
+91: //安卓10推荐uri，并且path的方式不再可用
+
+----
+File: app/src/main/java/com/imengyu/vr720/service/CacheServices.java
+24: * 统计缓存目录的大小
+25: * @return 缓存目录的大小
+37: * 清理缓存目录
+
+----
+File: app/src/main/java/com/imengyu/vr720/service/ErrorUploadService.java
+115: //设置超时
+
+----
+File: app/src/main/java/com/imengyu/vr720/service/ListImageCacheService.java
+53: * 尝试读取图片已经缓存的缓存文件路径
+54: * @param path 图片路径
+55: * @return 缓存文件路径，如果没有，则返回null
+65: * 加载图片缩略图并存入缓存系统
+66: * @param path 图片路径
+67: * @return 返回图片缩略图
+104: //保存缩略图至缓存文件
+134: //获取图像大小
+148: //图像太小，直接使用原图
+152: //如果图像非常大，那么会保存缩略图至文件缓存中，方便下次读取
+155: //已经有文件缓存，直接读取
+164: //保存缩略图至缓存文件
+187: //普通加载模式
+205: * 快速加载缩略图并设置缓存
+206: * @param path 文件路径
+207: * @param cachePath 缩略图文件路径
+208: * @return 返回缩略图
+227: * 缓存大小超过了最大限制，开始清理
+244: * 清除所有图像缓存
+268: * 释放保存在内存中的缓存
+274: //清理掉较少使用的缓存
+
+----
+File: app/src/main/java/com/imengyu/vr720/service/UpdateService.java
+54: } else err = "未知错误";
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/AlertDialogTool.java
+13: * 弹出框工具类
+25: //设置对话框在宽屏模式下的最宽宽度
+31: Configuration mConfiguration = context.getResources().getConfiguration(); //获取设置的配置信息
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/AppUtils.java
+27: * app工具类
+34: * 跳转到APP应用商店指定包名的应用详情页
+35: * @param context 上下文
+36: * @param packageName 包名
+46: * 设置语言
+47: * @param context 上下文
+48: * @param val 语言标识
+58: * 检查应用许可有没有同意
+59: * @param activity 活动
+60: * @param callback 回调
+80: * 写入示例全景图
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/Base64Utils.java
+27: * 功能：编码字符串
+29: *            源字符串
+37: * 功能：解码字符串
+40: * @param data 源字符串
+48: * 功能：编码byte[]
+50: *            源
+82: * 功能：解码
+84: *            编码后的字符数组
+139: * 功能：编码文件
+142: *            源文件
+157: * 功能：解码文件。
+158: * @param file 源文件
+159: * @throws IOException 文件读取错误时发生
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/CrashHandler.java
+23: //log文件的后缀名
+28: //系统默认的异常处理（默认情况下，系统会终止当前的异常程序）
+31: //构造方法私有，防止外部构造多个实例，即采用单例模式
+41: //这里主要完成初始化工作
+43: //获取系统默认的异常处理器
+46: //将当前实例设为系统默认的异常处理器
+49: //获取路径
+54: * 这个是最关键的函数，当程序中有未被捕获的异常，系统将会自动调用#uncaughtException方法
+55: * thread为出现未捕获异常的线程，ex为未捕获的异常，有了这个ex，我们就可以得到异常信息。
+59: //导出异常信息到SD卡中
+62: //打印出当前调用栈信息
+65: //如果系统提供了默认的异常处理器，则交给系统去结束我们的程序，否则就由我们自己结束自己
+83: //以当前时间创建log文件
+87: //导出发生异常的时间
+89: //导出手机信息
+93: //导出异常的调用栈信息
+102: //应用的版本名称和版本号
+110: //android版本号
+116: //手机制造商
+120: //手机型号
+124: //cpu架构
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/DatabaseHelper.java
+9: //类没有实例化,是不能用作父类构造器的参数,必须声明为静态
+10: private static final String name = "vr720"; //数据库名称
+11: private static final int version = 1; //数据库版本
+14: //第三个参数CursorFactory指定在执行查询时获得一个游标实例的工厂类,设置为null,代表使用系统默认的工厂类
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/DateUtils.java
+13: * 日期工具类 默认使用 "yyyy-MM-dd HH:mm:ss" 格式化日期
+18: * 时间如：14:02:33
+23: * 时间如：上午 09:02:33
+27: * 时间如：14:02:33
+32: * 时间如：上午 09:02:33
+36: * 英文简写（默认）如：2010-12-01
+40: * 英文全称 如：2010-12-01 23:15:06
+44: * 精确到毫秒的完整时间 如：yyyy-MM-dd HH:mm:ss.S
+48: * 中文简写 如：2010年12月01日
+50: public static String FORMAT_SHORT_CN = "yyyy 年 MM 月 dd 日";
+52: * 中文全称 如：2010年12月01日 23时15分06秒
+54: public static String FORMAT_LONG_CN = "yyyy 年 MM 月 dd 日 HH 时 mm 分 ss 秒";
+55: public static String FORMAT_LONG_CN_FOR_TICK = "y 年 M 月 d 天 H 时 m 分 s 秒";
+57: * 精确到毫秒的完整中文时间
+59: public static String FORMAT_FULL_CN = "yyyy年MM月dd日  HH时mm分ss秒SSS毫秒";
+62: * 获得默认的 date pattern
+69: * 根据预设格式返回当前日期
+78: * 根据用户格式返回当前日期
+88: * 使用预设格式格式化日期
+98: * 格式化时间（自动24/12）
+106: * 格式化时间（仅分钟）（自动24/12）
+117: * 使用用户格式格式化日期
+120: *            日期
+122: *            日期格式
+135: * 使用预设格式提取字符串日期
+138: *            日期字符串
+146: * 使用用户格式提取字符串日期
+149: *            日期字符串
+151: *            日期格式
+165: * 在日期上增加数个整月
+168: *            日期
+170: *            要增加的月数
+181: * 在日期上增加天数
+184: *            日期
+186: *            要增加的天数
+197: * 获取时间戳
+206: * 获取日期年份
+209: *            日期
+217: * 按默认格式的字符串距离今天的天数
+220: *            日期字符串
+232: * 计算日期距离今天的天数
+235: *            日期字符串
+247: * 计算两个日期相差的天数
+260: if (year1 != year2)  //不同年
+263: for (int i = year1 ; i < year2 ;i++){ //闰年
+266: }else { // 不是闰年
+271: }else{// 同年
+277: * 按用户格式字符串距离今天的天数
+280: *            日期字符串
+282: *            日期格式
+294: * 获取年是不是闰年
+296: * @param year 日期字符串
+302: * 获取月份天数
+304: * @param month 月份
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/FileSizeUtil.java
+10: public static final int SIZETYPE_B = 1;// 获取文件大小单位为B的double值
+11: public static final int SIZETYPE_KB = 2;// 获取文件大小单位为KB的double值
+12: public static final int SIZETYPE_MB = 3;// 获取文件大小单位为MB的double值
+13: public static final int SIZETYPE_GB = 4;// 获取文件大小单位为GB的double值
+15: * 获取文件指定文件的指定单位的大小
+18: *            文件路径
+20: *            获取大小的类型1为B、2为KB、3为MB、4为GB
+21: * @return double值的大小
+34: Log.e("获取文件大小", "获取失败!");
+39: * 调用此方法自动计算指定文件或指定文件夹的大小
+42: *            文件路径
+43: * @return 计算好的带B、KB、MB、GB的字符串
+56: Log.e("获取文件大小", "获取失败!");
+61: * 获取指定文件大小
+75: Log.e("获取文件大小", "文件不存在!");
+80: * 获取指定文件夹
+99: * 转换文件大小
+123: * 转换文件大小,指定转换的类型
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/FileUtils.java
+31: * 文件工具类
+38: * 从文件路径获取文件名（不包括扩展名）
+39: * @param path 文件路径
+40: * @return 文件名（不包括扩展名）
+53: * 从文件路径获取文件名（包括扩展名）
+54: * @param path 文件路径
+55: * @return 文件名（包括扩展名）
+66: * 删除文件
+67: * @param path 文件路径
+68: * @return 返回是否成功
+83: * 获取文件夹大小
+84: * @param fileDir 文件夹路径
+85: * @return 返回文件夹大小（包括子文件夹）字节
+101: * 将文件大小转为可读的字符串
+102: * @param fileSize 文件大小（字节）
+103: * @return 可读的字符串
+123: * 获取指定路径的 MimeType
+124: * @param url 路径
+125: * @return 返回 MimeType
+129: //使用系统API，获取URL路径中文件的后缀名（扩展名）
+132: //使用系统API，获取MimeTypeMap的单例实例，然后调用其内部方法获取文件后缀名（扩展名）所对应的MIME类型
+139: * 使用系统选择文件打开方式
+140: * @param context 上下文
+141: * @param file 文件路径
+148: //解决 Android N 7.0 上 使用 fileProvider 共享文件
+167: * 获取文件路径的扩展名是不是支持的图像
+168: * @param path 文件路径
+169: * @return 返回是不是支持
+181: * 获取文件路径的扩展名是不是支持的视频
+182: * @param path 文件路径
+183: * @return 返回是不是支持
+194: * 写入txt文件
+195: * @param path 文件路径
+196: * @param content 内容
+197: * @return 返回是否成功
+219: * 读取txt文件
+220: * @param path 文件路径
+221: * @return 返回是否成功
+246: * 获取Content文件真实路径
+247: * @param context 上下文
+249: * @return 返回Content
+253: if ("file".equalsIgnoreCase(uri.getScheme())) {//使用第三方应用打开
+258: //4.4以后
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/HttpUtils.java
+15: * 联网工具类，用于连接网络，取得数据
+21: * 简单请求 http 获取JSON
+23: * @return 返回 JSONObject
+29: Response response = client.newCall(request).execute();//发送请求
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/ImageUtils.java
+24: * 根据指定的图像路径和大小来获取缩略图
+26: * @param path      图像的路径
+27: * @param maxWidth  指定输出图像的宽度
+28: * @param maxHeight 指定输出图像的高度
+29: * @return 生成的缩略图
+64: * 加载图片为 Bitmap
+66: * @param path 图像的路径
+67: * @return 返回Bitmap
+85: * 获取图像大小
+87: * @param imagePath 图像路径
+88: * @return 图像大小
+89: * @throws IOException 抛出异常
+124: * 按自动名称保存图像至存储中
+126: * @param bitmap 图像
+127: * @return 返回是否成功
+137: * 保存图像至存储中
+139: * @param context  上下文
+140: * @param bitmap   图像
+141: * @param fileName 文件名
+142: * @return 返回是否成功
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/KeyBoardUtil.java
+27: //获取输入框当前的location位置
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/MD5Utils.java
+17: throw new RuntimeException("没有这个md5算法！");
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/MapTable.java
+5: * -- MIME 列表 --
+8: // --{后缀名， MIME类型}   --
+447: * --获取文件类型 --
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/NavigationBarUtils.java
+20: * 获取虚拟按键的高度
+36: * 检查是否存在虚拟按键栏
+57: * 判断虚拟按键栏是否重写
+74: * 隐藏底部导航栏
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/NetworkUtils.java
+23: } else if(nc.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)){//移动数据
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/NotchScreenUtil.java
+21: public static final int VIVO_NOTCH = 0x00000020;//是否有刘海
+22: public static final int VIVO_FILLET = 0x00000008;//是否有圆角
+25: * 判断VIVO是否是刘海屏
+26: * @param context 上下文
+45: * 判断华为是否是刘海屏
+46: * @param context 上下文
+67: * 判断Oppo是否是刘海屏
+68: * @param context 上下文
+76: * 判断是否是刘海屏
+78: * @return 是否是刘海屏
+96: * 小米刘海屏判断.
+98: * @return property ro.miui.notch，值为1时则是 Notch 屏手机
+108: //参数类型
+114: //参数
+132: * 获取华为刘海高度
+152: * 获取VIVO刘海高度
+158: * 获取小米刘海高度
+169: * 获取刘海屏高度
+170: * @param activity 上下文
+171: * @return 刘海屏高度(px)
+198: * 设置强制刘海屏布局
+210: * 设置强制刘海屏布局
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/PixelTool.java
+13: * 根据手机的分辨率从 dp 的单位 转成为 px(像素)
+21: * 根据手机的分辨率从 px(像素) 的单位 转成为 dp
+28: // 将px值转换为sp值
+45: * 将sp值转换为px值，保证文字大小不变
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/RendererUtils.java
+11: * 检查是否是模拟器中
+22: * 检查本机是否支持OPENGL ES2
+23: * @param context 上下文
+24: * @return 是否支持
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/ScreenUtils.java
+15: * 全屏工具类
+20: * 设置是否全屏
+22: * @param fullScreen 是否全屏
+48: * 获取屏幕大小（宽高为竖屏时的大小）
+49: * @param context 上下文
+50: * @return 屏幕大小（宽高为竖屏时的大小）
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/ShareUtils.java
+20: * 分享文件
+21: * @param context 上下文
+22: * @param file 文件路径
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/StatusBarUtils.java
+14: * 状态栏工具栏
+19: * 设置状态栏亮色
+39: * 设置状态栏暗色
+59: * 修改状态栏颜色，支持4.4以上版本
+61: * @param color 状态栏背景颜色
+70: * 设置状态栏为透明色
+84: * 获取状态栏高度
+85: * @param context 上下文
+86: * @return 状态栏高度
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/StorageDirUtils.java
+28: * 检测并创建存储文件夹
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/StringUtils.java
+7: * 字符串工具类
+12: * 检查文字是否为null或空字符串
+13: * @param s 字符串
+20: * 获取可读时间字符串
+21: * @param millisecond 毫秒
+22: * @return 字符串
+47: * 是否包含指定字符串,不区分大小写
+48: * @param input 原字符串
+49: * @param regex 正则
+60: * 替换正则表达式特殊字符
+61: * @param input 源字符串
+
+----
+File: app/src/main/java/com/imengyu/vr720/utils/text/CustomUrlSpan.java
+46: // 循环遍历并拦截 所有https://开头的链接
+
+----
+File: app/src/main/java/com/imengyu/vr720/widget/ClearEditText.java
+30: //按钮资源
+32: //动画时长
+34: //按钮左右间隔,单位DP
+36: //清除按钮宽度,单位DP
+39: //间隔记录
+41: //清除按钮宽度记录
+43: //右内边距
+45: //清除按钮的bitmap
+47: //清除按钮出现动画
+49: //消失动画
+51: //是否显示的记录
+54: //右边添加其他按钮时使用
+74: //setSingleLine();这个方法不推荐写在代码中，原因请看博客尾部更新
+91: //设置内边距
+102: canvas.setDrawFilter(paintFlagsDrawFilter);//抗锯齿
+119: * 绘制清除按钮出现的图案
+121: * @param translationX 水平移动距离
+134: * 绘制清除按钮消失的图案
+136: * @param scale  缩放比例
+148: * 开始清除按钮的显示动画
+157: * 开始清除按钮的消失动画
+166: * 结束所有动画
+174: * Edittext内容变化的监听
+205: * 触控执行的监听
+231: * 开始晃动动画
+239: * 开始晃动动画
+246: * 晃动动画
+247: * @param counts 0.5秒钟晃动多少下
+257: * 给图标染上当前提示文本的颜色并且转出Bitmap
+268: * drawable转换成bitmap
+
+----
+File: app/src/main/java/com/imengyu/vr720/widget/MainThumbnailImageView.java
+35: private String imageSize = "未知";
+135: //文字背景
+139: //圆角
+142: //文字
+177: //在按下事件中设置滤镜
+182: //在CANCEL和UP事件中清除滤镜
+230: *   设置滤镜
+238: *   清除滤镜
+
+----
+File: app/src/main/java/com/imengyu/vr720/widget/MyTitleBar.java
+18: * 自定义标题栏
+43: //初始化视图
+55: //初始化资源文件
+58: String title = typedArray.getString(R.styleable.MyTitleBar_title);//标题
+59: int leftIcon = typedArray.getResourceId(R.styleable.MyTitleBar_left_icon, R.drawable.ic_back);//左边图片
+60: int rightIcon = typedArray.getResourceId(R.styleable.MyTitleBar_right_icon, R.drawable.ic_more);//右边图片
+61: String rightText = typedArray.getString(R.styleable.MyTitleBar_right_text);//右边文字
+62: int titleBarType = typedArray.getInt(R.styleable.MyTitleBar_title_bar_type, 10);//标题栏类型,默认为10
+63: boolean titleBarDark = typedArray.getBoolean(R.styleable.MyTitleBar_title_bar_dark, false);//标题栏类型,默认为10
+66: //赋值进去我们的标题栏
+100: * 获取标题栏是否是暗黑模式
+101: * @return 标题栏是否是暗黑模式
+107: * 设置标题栏是否是暗黑模式
+108: * @param titleBarDark 是否是暗黑模式
+121: * 获取标题栏模式
+128: * 设置标题栏模式
+133: if (titleMode == TITLE_MODE_ONE) {//不传入,默认为10,显示更多 文字,隐藏更多图标按钮
+136: } else if(titleMode == TITLE_MODE_ONE_AND_TEXT) {//传入11,显示更多图标按钮,隐藏更多 文字
+145: * 左边图片点击事件
+146: * @param l 事件回调
+152: * 右边图片点击事件
+153: * @param l 事件回调
+159: * 右边文字点击事件
+160: * @param l 事件回调
+166: * 设置标题栏文字
+167: * @param s 文字
+173: * 设置标题栏文字
+174: * @param s 文字
+180: * 设置标题栏文字
+181: * @param s 文字
+187: * 设置标题栏文字
+188: * @param s 文字
+
+----
+File: app/src/main/java/com/imengyu/vr720/widget/RecyclerViewEmptySupport.java
+12: * 用来演示如何在RecyclerView里面添加setEmptyView
+16: * 当数据为空时展示的View
+20: * 创建一个观察者
+21: * *为什么要在onChanged里面写？
+22: * * 因为每次notifyDataChanged的时候，系统都会调用这个观察者的onChange函数
+23: * * 我们大可以在这个观察者这里判断我们的逻辑，就是显示隐藏
+29: Adapter<?> adapter = getAdapter(); //这种写发跟之前我们之前看到的ListView的是一样的，判断数据为空否，再进行显示或者隐藏
+55: * * @param emptyView 展示的空view
+66: //这里用了观察者模式，同时把这个观察者添加进去，
+67: // 至于这个模式怎么用，谷歌一下，不多讲了，因为这个涉及到了Adapter的一些原理，感兴趣可以点进去看看源码，还是受益匪浅的
+70: //当setAdapter的时候也调一次（实际上，经我粗略验证，不添加貌似也可以。不行就给添上呗，多大事嘛）
+
+----
+File: app/src/main/java/com/imengyu/vr720/widget/RoundAngleImageView.java
+22: * 个人理解是
+24: * 这两个都是画圆的半径
+
+----
+File: app/src/main/res/values/arrays.xml
+33: <item>中文</item>
+
+----
+File: app/src/main/res/values/colors.xml
+32: <!--前景色-->
+36: <!--背景色-->
+38: <!--操作栏颜色-->
+42: <!--状态栏-->
+
+----
+File: app/src/main/res/values/strings.xml
+3: <string name="app_introduction">一款精简的720度全景浏览软件</string>
+6: <string name="navigation_drawer_open">开启侧边栏</string>
+7: <string name="navigation_drawer_close">关闭侧边栏</string>
+8: <string name="nav_header_title">一款精简的 720 全景浏览软件</string>
+10: <string name="nav_header_desc">导航标题</string>
+11: <string name="nav_header_soft">软件</string>
+12: <string name="nav_header_help">帮助</string>
+14: <string name="title_activity_settings">设置</string>
+15: <string name="title_activity_about">关于 VR720</string>
+16: <string name="title_activity_pano">查看720度全景</string>
+17: <string name="title_activity_feedback">提交软件反馈</string>
+18: <string name="title_activity_help">VR720 帮助文档</string>
+19: <string name="title_activity_gallery">相册</string>
+20: <string name="title_activity_import">导入至 VR720</string>
+21: <string name="title_reminder">温馨提示</string>
+22: <string name="title_home">我的全景图</string>
+23: <string name="title_gallery">分类收藏夹</string>
+24: <string name="title_choose_language">选择语言</string>
+27: <string name="action_new_gallery">新建分类收藏夹</string>
+28: <string name="action_import_pano">导入全景图</string>
+29: <string name="action_search">搜索</string>
+30: <string name="action_settings">设置</string>
+31: <string name="action_about">关于本软件</string>
+32: <string name="action_send_feed_back">提交建议或反馈</string>
+33: <string name="action_quit">退出</string>
+35: <string name="action_ok">确定</string>
+36: <string name="action_cancel">取消</string>
+37: <string name="action_yes">是</string>
+38: <string name="action_no">否</string>
+39: <string name="action_cancel_and_quit">取消并退出</string>
+40: <string name="action_delete">删除</string>
+41: <string name="action_sure_delete">确定删除</string>
+42: <string name="action_sure_clear">确定清空</string>
+43: <string name="action_select_all">全选</string>
+44: <string name="action_clear">清空列表</string>
+45: <string name="action_sort">排序方式</string>
+46: <string name="action_sort_name">名称</string>
+47: <string name="action_sort_date">修改日期</string>
+48: <string name="action_sort_create_date">创建日期</string>
+49: <string name="action_sort_size">文件大小</string>
+50: <string name="action_sort_custom">自定义排序</string>
+51: <string name="action_move_out_list">移出列表</string>
+52: <string name="action_view_file_info">查看文件信息</string>
+53: <string name="action_open_with_text">其他应用打开</string>
+54: <string name="action_share">分享</string>
+55: <string name="action_rename">重命名</string>
+56: <string name="action_delete_file">删除文件</string>
+57: <string name="action_back_main">返回主界面</string>
+58: <string name="action_open_now">立即开启</string>
+59: <string name="action_go_and_set">前往设置</string>
+60: <string name="action_help">帮助文档</string>
+61: <string name="action_shot">截图</string>
+62: <string name="action_pano_gyro">手机陀螺仪</string>
+63: <string name="action_add_to">添加到</string>
+64: <string name="action_cancel_load">取消加载</string>
+65: <string name="action_continue_load">继续加载</string>
+66: <string name="action_next_page">下一张</string>
+67: <string name="action_prev_page">上一张</string>
+70: <string name="text_tip">提示</string>
+71: <string name="text_warning">系统提示</string>
+72: <string name="text_please_wait">请稍后</string>
+73: <string name="text_placeholder">文字占位符</string>
+74: <string name="text_return">返回</string>
+75: <string name="text_choosed_items">已选择 %d 项</string>
+76: <string name="text_import_success_count">成功导入了 %d 个文件</string>
+77: <string name="text_import_files">选择全景文件导入</string>
+78: <string name="text_import_folder">从系统相册导入全景</string>
+79: <string name="text_how_to_import_gallery">你想如何导入这个相册？</string>
+80: <string name="text_import_all_images">导入相册中所有图片</string>
+81: <string name="text_import_to_gallery">将相册中图片导入 %s 分类收藏夹</string>
+82: <string name="text_show_date">显示日期</string>
+83: <string name="text_hide_date">隐藏日期</string>
+85: <string name="text_do_you_want_import_to_list">你想把这个文件导入到列表中吗？</string>
+86: <string name="text_import_to_list_and_do_not_remind_me_next">以后都直接导入，不需要再提醒我</string>
+87: <string name="text_don_not_import_to_list_and_do_not_remind_me_next">以后都不用导入</string>
+88: <string name="text_please_choose_item">请选择项目</string>
+89: <string name="text_also_delete_files">同时删除文件</string>
+90: <string name="text_core_init_failed">抱歉，程序出现了故障</string>
+91: <string name="text_your_device_dosnot_support_es20">抱歉，你的设备不支持最基础的 OpenGL ES 2.0, 本程序无法继续进行渲染</string>
+92: <string name="text_title">标题</string>
+93: <string name="text_core_ver">内核版本：</string>
+94: <string name="text_flow_system">跟随系统</string>
+97: <string name="text_enter_gallery_name">输入分类收藏夹名称</string>
+99: <string name="text_update_failed">更新失败</string>
+100: <string name="text_update_latest">已经是最新版本啦！</string>
+102: <string name="text_panorama_size_not_right_warning_text">您准备浏览的这张全景图看起来并不是正常比例的全景图像，继续浏览可能会导致图像变形等问题，是否继续加载？</string>
+103: <string name="text_panorama_size_not_right">图像不是正常比例的全景图</string>
+104: <string name="text_panorama_video_size_not_right_warning_text">您准备浏览的这个全景视频看起来比例并不是正常的，继续浏览可能会导致图像变形等问题，是否继续加载？</string>
+105: <string name="text_panorama_video_size_not_right">全景视频不是正常比例的</string>
+107: <string name="text_vr_mode">VR模式</string>
+108: <string name="text_more">更多</string>
+109: <string name="text_gyro">陀螺仪</string>
+110: <string name="text_mode_ball">球形</string>
+111: <string name="text_mode_little_planet">小行星</string>
+112: <string name="text_mode_video_ball">水晶球</string>
+113: <string name="text_mode_rectilinear">平面</string>
+114: <string name="text_mode_360_pano">360度</string>
+115: <string name="text_mode_source">原图</string>
+116: <string name="text_mode_mercator">全景</string>
+117: <string name="text_loading_wait">正在加载，请稍后</string>
+118: <string name="text_un_know_pano">未知全景文件</string>
+119: <string name="text_un_know_size">未知大小</string>
+120: <string name="text_un_know">未知</string>
+121: <string name="text_end">到底啦</string>
+122: <string name="text_press_once_more_to_quit">再按一次退出程序</string>
+123: <string name="text_would_you_want_clear_list">是否要清空列表？</string>
+124: <string name="text_all_list_will_be_clear">当前列表以及分类中的图像将会被清空，但是不会删除源文件。</string>
+125: <string name="text_gallery_list_will_be_clear">所选分类收藏夹的图像将会被清空，但是不会删除源文件。</string>
+126: <string name="text_also_delete_from_main_list">同时从主页以及其他相册中移除(不会删除源文件)</string>
+127: <string name="text_file_delete_count">成功删除 %d 个文件</string>
+128: <string name="text_open_way">打开方式</string>
+129: <string name="text_rename_gallery">重命名分类收藏夹</string>
+130: <string name="text_search_your_pano">搜索你的全景图</string>
+131: <string name="text_nothing_searched">什么都没搜到</string>
+132: <string name="text_you_can_search">您可以根据这些字段进行搜索: 文件名、修改日期、文件大小\n要根据多个关键词搜索，可以使用空格隔开</string>
+134: <string name="text_grid_mode">宫格模式</string>
+135: <string name="text_list_mode">列表模式</string>
+137: <string name="text_video">视频</string>
+138: <string name="text_all">全部</string>
+139: <string name="text_image">图像</string>
+141: <string name="text_more_actions">更多操作</string>
+142: <string name="text_i_new">我知道了</string>
+143: <string name="text_i_like_it">我喜欢</string>
+145: <string name="text_delete_success">删除成功</string>
+146: <string name="text_delete_failed">文件删除失败</string>
+148: <string name="text_file_info">内容信息</string>
+149: <string name="text_file_path">完整路径：</string>
+150: <string name="text_file_size">文件大小：</string>
+151: <string name="text_image_size">分辨率：</string>
+152: <string name="text_image_date">拍摄日期：</string>
+153: <string name="text_image_shutter_time">快门时间：</string>
+154: <string name="text_image_exposure_bias_value">曝光补偿：</string>
+155: <string name="text_image_iso_sensitivity">ISO感光度：</string>
+157: <string name="text_image_screenshot_description">全景文件 %s 在 %s 的截图</string>
+158: <string name="text_image_screenshot_title">全景截图%s</string>
+160: <string name="text_save">保存</string>
+161: <string name="text_image_save_success">截图成功！图像已保存至相册</string>
+162: <string name="text_image_save_failed">图像保存失败！ %s</string>
+163: <string name="text_share_image_title">分享这张全景图</string>
+164: <string name="text_share_files_title">分享 %d 个文件</string>
+165: <string name="text_choose_program_to_open">选择对应的软件打开该文件</string>
+166: <string name="text_file_cannot_open">抱歉，你的系统不能打开此文件</string>
+167: <string name="text_image_not_support">抱歉，我们暂时不支持打开此图像</string>
+168: <string name="text_not_provide_path">没有提供图像路径</string>
+169: <string name="text_path_copied_to_clipboard">图像路径已复制到剪贴板</string>
+170: <string name="text_no_video_or_image">没有全景图或全景视频</string>
+172: <string name="text_sure_delete_this_image">您真的要删除这张图像吗？</string>
+173: <string name="text_sure_delete_pano">是否要删除选中的全景图？</string>
+174: <string name="text_sure_delete_gallery">是否要删除选中的分类收藏夹？</string>
+175: <string name="text_you_can_remove_choosed_images">你可以把已选择的 %d 个全景图从此列表删除，或一并删除源文件，源文件删除之后不能撤销。</string>
+176: <string name="text_you_can_remove_choose_images_from_gallery">你可以把已选择的 %d 个全景图从此分类收藏夹删除，此操作不会删除源文件</string>
+177: <string name="text_choose_some_file_to_del">请选择一些你要删除的文件</string>
+178: <string name="text_choose_one_file_to_open">请选择一个你要打开的文件</string>
+179: <string name="text_reached_the_bottom">到底啦</string>
+181: <string name="text_this_is_first_image">已经是第一张图片了哦</string>
+182: <string name="text_this_is_last_image">已经是最后一张图片了哦</string>
+184: <string name="text_this_is_a_video">这是一个全景视频</string>
+185: <string name="text_added_to_i_like">全景图已经收藏到我的喜欢</string>
+186: <string name="text_removed_from_i_like">全景图已经从我的喜欢移除</string>
+188: <string name="text_now_cache_size">当前程序缓存大小 %s</string>
+189: <string name="text_sure_to_clear_the_cache">确定清空程序缓存？</string>
+190: <string name="text_cache_clear_finish">程序缓存已经清空！</string>
+194: <string name="text_i_like">我的喜欢</string>
+195: <string name="text_videos">视频</string>
+196: <string name="text_count_video">个全景视频</string>
+197: <string name="text_count_image">个全景图</string>
+198: <string name="text_no_image">收藏夹内没有全景图</string>
+199: <string name="text_choose_gallery">选择分类收藏夹</string>
+200: <string name="text_choose_system_gallery_to_import">选择系统相册导入</string>
+201: <string name="text_choose_move_method">选择添加方式</string>
+202: <string name="text_do_not_ask_me_again">下次不要再询问我</string>
+204: <string name="text_method_move">移动到对应收藏夹</string>
+205: <string name="text_method_copy">复制到对应收藏夹</string>
+207: <string name="text_do_you_like_app">你喜欢 VR720 吗？</string>
+208: <string name="text_give_a_start_if_you_like_app">觉得不错的话就给个好评吧 ^ ^~ </string>
+209: <string name="text_give_a_start">软件不错，给个好评</string>
+210: <string name="text_bad_app">我要吐槽</string>
+211: <string name="text_later">以后再说</string>
+213: <string name="text_add_success_to_gallery_with_count">成功添加 %d 项目至分类收藏夹</string>
+214: <string name="text_add_success">添加成功！</string>
+216: <string name="text_gyro_not_support">设备不支持</string>
+217: <string name="text_gyro_cant_use_in_mode">此模式不支持陀螺仪旋转</string>
+219: <string name="text_main_empty">这里空空如也，一张全景图都没有呢\n点击下面的 “+” 导入一些全景图吧！</string>
+221: <string name="text_no_storage_permission">存储权限不可用</string>
+222: <string name="text_denied_storage_permission">您手动拒绝了存储权限</string>
+223: <string name="text_storage_permission_usage">本程序需要获取读取本地文件的权限才能为您打开全景图，以及保存必要的缓存以及设置等\n如果您不授予程序必要的权限，软件将无法正常使用。</string>
+224: <string name="text_storage_permission_open_intro">您可能在刚才或之前手动拒绝了授予本程序使用 “读取文件或存储”的权限，系统不会再次询问您是否允许，您需要手动允许权限。\n如果您需要继续使用本应用，那么请开启必要的权限。\n如果不开启权限，应用就不能读取您的全景图，更谈不上浏览了，本应用就变成了一个完全没有用的东西，建议马上卸载掉。\n请在 “应用设置”>“权限” 中，允许本程序使用 “读取文件或存储”权限来允许本程序读取本地文件。</string>
+226: <string name="text_logo">标题Logo</string>
+227: <string name="text_soft_version">当前软件版本：</string>
+228: <string name="text_success">成功</string>
+229: <string name="text_error_image">错误图像</string>
+230: <string name="text_failed">操作失败</string>
+231: <string name="text_all_settings_reset_to_default">所有设置已经恢复为默认设置</string>
+232: <string name="text_settings_backup_to_file">配置设置已经备份至文件</string>
+233: <string name="text_settings_import_success">配置设置导入成功</string>
+234: <string name="text_and">与</string>
+235: <string name="text_do_you_want_reset_settings">你真的要还原默认设置吗？\n所有设置将会还原为默认状态，当前未保存设置将会丢失。</string>
+236: <string name="text_we_will_backup">我们将会备份这些数据：\n- 软件配置设置\n- 已经导入的全景文件索引路径\n- 分类收藏夹数据</string>
+237: <string name="text_we_will_restore">导入数据后将会覆盖当前数据，并且不可恢复，是否继续？ </string>
+238: <string name="text_merge_import_data">不覆盖当前数据而是与新数据合并（如果数据重复则不会导入）</string>
+239: <string name="text_open_source_license">开源软件许可</string>
+240: <string name="text_open_full_chunks_warn">开启后虽然能有更清晰的效果，但这可能会增加运算量，还可能会导致您的设备电池电量消耗速度加快。</string>
+241: <string name="text_app_failure">灾难性故障</string>
+242: <string name="text_app_native_load_error">加载必要的库失败，这可能表明APP不适用于您的系统或设备。</string>
+243: <string name="text_network_not_connect">您没有连接到网络</string>
+244: <string name="text_cell_network_warn">您正在使用数据连接，更新可能会造成流量消耗，是否继续？</string>
+245: <string name="text_a_report">一个报告</string>
+246: <string name="text_check_err">检测到软件上一次出现一些异常，这有可能是 APP 存在 BUG，软件生成了一份关于错误的详细报告（其中不包含您的个人隐私信息），您是否可以将此份报告发送给我们？这有助于我们解决软件故障和BUG，以防止此类错误再次发生。\n错误报告文件：%s</string>
+247: <string name="text_send_report">发送报告</string>
+248: <string name="text_do_not_send_report">不发送</string>
+249: <string name="text_i_want_check_report_content">我想查看这份报告的内容</string>
+250: <string name="text_feed_back_success">反馈成功，感谢您！</string>
+251: <string name="text_feed_back_failed">反馈失败！错误：%s</string>
+252: <string name="text_demo_panorama_name">示例全景图片</string>
+253: <string name="text_show_in_main">显示在主页</string>
+254: <string name="text_do_not_show_in_main">不显示在主页</string>
+255: <string name="text_select_items_hidden_in_main">选择的全景图都已在主页隐藏</string>
+256: <string name="text_select_items_showed_in_main">选择的全景图都已显示在主页</string>
+260: <string name="text_error_un_know">未知错误</string>
+261: <string name="text_error_file_not_support">暂时不支持这种图像格式</string>
+262: <string name="text_error_file_not_exists">文件不存在</string>
+263: <string name="text_error_image_too_big">图像过大（超过65536x32768），我们无法打开此文件</string>
+264: <string name="text_error_big_image_and_not_jpg">图像过大无法解码，请转为 JPG 格式后再打开</string>
+265: <string name="text_error_bad_image">无法打开图像，图像可能已经损坏或者格式不支持</string>
+266: <string name="text_error_video_player_av_error">解码失败，视频可能已经损坏或者格式不支持</string>
+267: <string name="text_error_video_player_no_video_stream">视频并不包含图像，无法播放</string>
+268: <string name="text_error_video_player_video_not_support">暂时不支持这种视频格式</string>
+272: <string name="settings_header_common">通用</string>
+273: <string name="settings_header_panorama">全景图浏览</string>
+274: <string name="settings_header_others">其他</string>
+275: <string name="settings_header_about">关于</string>
+276: <string name="settings_header_screen">屏幕</string>
+277: <string name="settings_header_performance">性能</string>
+278: <string name="settings_header_cache">缓存</string>
+279: <string name="settings_header_update">更新</string>
+280: <string name="settings_header_debug">调试</string>
+281: <string name="settings_header_data_backup">数据备份</string>
+282: <string name="settings_header_audio">音频</string>
+284: <string name="settings_key_enable_full_chunks">启用完整全景图浏览</string>
+285: <string name="settings_summary_enable_full_chunks">在浏览较大全景图（大于4096x2048）时不会压缩而是以文件最高清晰度显示。虽然能有更清晰的效果，但这可能会增加运算量，还可能会导致您的设备电池电量消耗速度加快。</string>
+286: <string name="settings_key_do_not_check_pano_normal_size">不检查全景图的正常比例</string>
+287: <string name="settings_summary_do_not_check_pano_normal_size">如果全景图的比例不是正常的 720 度全景图，软件打开后渲染可能会出现图像变形的情况，因此软件会给出提示询问您要不要继续加载。您可以通过开启此选项禁用这个提示</string>
+288: <string name="settings_key_about">关于软件</string>
+289: <string name="settings_key_app_reset_all">重置为默认设置</string>
+290: <string name="settings_key_check_update">检查更新</string>
+291: <string name="settings_key_auto_update">自动更新软件</string>
+292: <string name="settings_key_go_app_store_check_update">去应用商店查看更新</string>
+293: <string name="settings_key_auto_import">打开文件时自动导入至列表</string>
+294: <string name="settings_key_privacy_policy">隐私政策以及许可协议</string>
+295: <string name="settings_key_enable_drag_velocity">开启惯性拖动</string>
+296: <string name="settings_key_show_debug_tool">开启全景调试界面</string>
+297: <string name="settings_key_enable_non_fullscreen">全景页面显示状态栏</string>
+298: <string name="settings_key_enable_keep_screen_on">全景页面中保持屏幕常亮</string>
+299: <string name="settings_key_data_backup">备份设置数据至文件</string>
+300: <string name="settings_key_data_restore_backup">从文件备份恢复设置数据</string>
+301: <string name="settings_key_enable_view_cache">启用浏览缓存</string>
+302: <string name="settings_key_clear_cache">清理缓存</string>
+303: <string name="settings_key_enable_program_cache">启用程序缓存</string>
+304: <string name="settings_summary_enable_view_cache">启用全景图浏览缓存后可以加快非常大的全景图的读取速度</string>
+305: <string name="settings_key_enable_low_fps">降低渲染FPS</string>
+306: <string name="settings_summary_enable_low_fps">降低FPS可以通过减少渲染次数（0至25帧每秒）以减少电池电量损耗，但画面可能会卡顿</string>
+307: <string name="settings_key_enable_custom_fps">自定义渲染FPS</string>
+308: <string name="settings_key_custom_fps">FPS 数值</string>
+309: <string name="settings_key_native_log_level">内核日志记录等级</string>
+310: <string name="settings_key_enable_native_log">启用内核日志</string>
+311: <string name="settings_key_enable_exception_catch">启用错误自动反馈</string>
+312: <string name="settings_summary_enable_exception_catch">启用后程序可以在发生错误时抓取错误异常信息，在下次启动时传回服务器（不包含您的个人信息），以帮助我们更好的改进软件（建议开启）</string>
+313: <string name="settings_key_use_native_decoder">硬件解码（如果可用）</string>
+314: <string name="settings_summary_use_native_decoder">优先尝试使用硬件解码，如果无对应解码器或是设备不支持硬件解码，则使用软件解码</string>
+315: <string name="settings_key_loop_play_video">循环播放视频</string>
+316: <string name="settings_key_double_click_play_pause">双击屏幕时</string>
+317: <string name="settings_summary_double_click_play_pause">双击屏幕时自动暂停/播放视频</string>
+318: <string name="settings_summary_play_pause_when_headset_state_changed">拔出/插入耳机时暂停/播放视频</string>
+319: <string name="settings_key_play_pause_when_headset_state_changed">耳机插入和拔出</string>
+320: <string name="settings_key_vol_up">音量增强</string>
+321: <string name="settings_summary_vol_up">如果声音太低，软件可尝试增强音量至200%</string>
+324: <string name="text_i_agree_agreement">我已阅读并同意</string>
+325: <string name="text_agreement_notice">为了便于我们更好的为你提供服务，在使用本产品前，请务必仔细阅读本产品相关的《用户协议》与《隐私政策》，点击同意即表明您接受并遵守本协议约定。</string>
+326: <string name="text_agreement">《用户协议》</string>
+327: <string name="text_privacy_policy">《隐私政策》</string>
+328: <string name="text_agreement_base_welcome">欢迎使用 VR720 ！您可以使用本应用快速用浏览、管理您本地的全景图。另外为了更好地使用产品功能，需征求您的允许，获得以下权限：</string>
+329: <string name="text_agreement_base">为了更好地使用产品功能，应用还征求您的允许获得以下权限：</string>
+330: <string name="text_agreement_devinfo">设备信息</string>
+331: <string name="text_agreement_devinfo_sub">包括设备ID/屏幕尺寸/操作系统/设备型号/网络连接模式/移动国家代码/屏幕分辨率及系统语言；用于根据不同的设备及系统版本来提供不同的功能和体验，获取产品的使用情况及Bug信息，帮助我们不断改进产品功能和体验。</string>
+332: <string name="text_agreement_interenet">网络</string>
+333: <string name="text_agreement_interenet_sub">包括IP地址；我们需要联网下载计算数据；以及帮助我们统计产品使用情况、反馈产品BUG，帮助我们不断改进产品功能和体验。</string>
+334: <string name="text_agreement_write_storage">读写存储</string>
+335: <string name="text_agreement_write_storage_sub">我们需要临时写入程序数据、程序计算缓存等等。</string>
+336: <string name="text_agreement_allow">同意并继续</string>
+337: <string name="text_agreement_not_allow">不同意并退出</string>
+
+----
+File: app/src/main/res/values/styles.xml
+50: <!--按钮样式-->
+104: <!--对话框样式-->
+106: <!--对话框基础样式-->
+140: <!--对话框动画-->
+156: <!--对话框动画-->
+
+
+I DID NOT modify these comments automatically. If you want, I can attempt automated translations and insert English comments above each Chinese comment. Reply 'Translate now' to proceed.

@@ -1,0 +1,12 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS) // FIXED
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+
+rootProject.name = "Temple360"
+include ':app'

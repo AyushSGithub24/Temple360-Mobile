@@ -1,0 +1,42 @@
+<resources>
+    <string-array name="custom_fps_entries">
+        <item>20 FPS</item>
+        <item>25 FPS</item>
+        <item>30 FPS</item>
+        <item>45 FPS</item>
+        <item>60 FPS</item>
+    </string-array>
+    <string-array name="custom_fps_values">
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+    </string-array>
+
+    <string-array name="log_level_entries">
+        <item>DEBUG</item>
+        <item>INFO</item>
+        <item>WARNING</item>
+        <item>ERROR</item>
+        <item>DISABLE</item>
+    </string-array>
+    <string-array name="log_level_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="language_entries">
+        <item>中文</item>
+        <item>English</item>
+    </string-array>
+
+    <string-array name="language_values">
+        <item>zh</item>
+        <item>en</item>
+    </string-array>
+
+</resources>

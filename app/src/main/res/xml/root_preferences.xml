@@ -1,0 +1,84 @@
+<!--
+  ~ Copyright 2018 The app Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:iconSpaceReserved="true">
+
+    <PreferenceCategory
+        app:title="@string/settings_header_common">
+
+        <Preference
+            app:icon="@drawable/ic_menu_settings"
+            app:key="settings_key_go_common"
+            app:title="@string/settings_header_common" />
+
+        <Preference
+            app:icon="@drawable/ic_menu_panorama_horizontal"
+            app:key="settings_key_go_panorama"
+            app:title="@string/settings_header_panorama" />
+
+        <Preference
+            app:icon="@drawable/ic_menu_video"
+            app:key="settings_key_go_video"
+            app:title="@string/text_video" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/settings_header_others">
+
+        <Preference
+            app:key="app_choose_language"
+            app:title="@string/title_choose_language" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/settings_header_data_backup">
+
+        <Preference
+            app:key="data_backup"
+            app:title="@string/settings_key_data_backup" />
+
+        <Preference
+            app:key="data_restore_backup"
+            app:title="@string/settings_key_data_restore_backup" />
+
+        <Preference
+            app:key="app_reset_all"
+            app:title="@string/settings_key_app_reset_all" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:title="@string/settings_header_about">
+
+        <Preference
+            app:icon="@drawable/ic_menu_about"
+            app:key="app_about"
+            app:title="@string/settings_key_about" />
+
+        <Preference
+            app:icon="@drawable/ic_menu_receipt_long"
+            app:key="app_privacy_policy"
+            app:title="@string/settings_key_privacy_policy" />
+
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>
